@@ -3,8 +3,8 @@ class Productos extends Controllers
 {
 	public function __construct()
 	{
-		parent::__construct();
 		session_start();
+		parent::__construct();
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 			die();
@@ -15,6 +15,7 @@ class Productos extends Controllers
 	public function Productos()
 	{
 		if (empty($_SESSION['permisosMod']['r'])) {
+
 			header("Location:" . base_url() . '/dashboard');
 		}
 		$data['page_tag'] = "Productos";
@@ -27,7 +28,7 @@ class Productos extends Controllers
 	public function getProductos()
 	{
 		if ($_SESSION['permisosMod']['r']) {
-			$arrData = $this->model->selectProductos();
+			$arrData = $this->model->selectProductos($_SESSION['idUser']);
 			for ($i = 0; $i < count($arrData); $i++) {
 				$btnView = '';
 				$btnEdit = '';
@@ -71,10 +72,13 @@ class Productos extends Controllers
 				$strPrecio = strClean($_POST['txtPrecio']);
 				$intStock = intval($_POST['txtStock']);
 				$intStatus = intval($_POST['listStatus']);
+				$idUsuario = $_SESSION['idUser'];
 				$request_producto = "";
 
 				$ruta = strtolower(clear_cadena($strNombre));
 				$ruta = str_replace(" ", "-", $ruta);
+
+
 
 				if ($idProducto == 0) {
 					$option = 1;
@@ -87,7 +91,8 @@ class Productos extends Controllers
 							$strPrecio,
 							$intStock,
 							$ruta,
-							$intStatus
+							$intStatus,
+							$idUsuario
 						);
 					}
 				} else {
@@ -102,7 +107,8 @@ class Productos extends Controllers
 							$strPrecio,
 							$intStock,
 							$ruta,
-							$intStatus
+							$intStatus,
+							// $idUsuario
 						);
 					}
 				}

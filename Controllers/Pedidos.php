@@ -1,11 +1,11 @@
 <?php 
+session_start();
 require_once("Models/TTipoPago.php"); 
 class Pedidos extends Controllers{
 	use TTipoPago;
 	public function __construct()
 	{
 		parent::__construct();
-		session_start();
 		if(empty($_SESSION['login']))
 		{
 			header('Location: '.base_url().'/login');

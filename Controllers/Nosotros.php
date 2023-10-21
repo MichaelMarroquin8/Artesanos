@@ -2,8 +2,8 @@
 	class Nosotros extends Controllers{
 		public function __construct()
 		{
-			parent::__construct();
 			session_start();
+			parent::__construct();
 			getPermisos(MDPAGINAS);
 		}
 

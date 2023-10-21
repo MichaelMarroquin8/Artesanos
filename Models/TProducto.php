@@ -146,15 +146,18 @@ trait TProducto
 						p.codigo,
 						p.nombre,
 						p.descripcion,
+						p.personaid,
 						p.categoriaid,
 						c.nombre as categoria,
 						c.ruta as ruta_categoria,
 						p.precio,
 						p.ruta,
-						p.stock
+						p.stock,
+						per.telefono -- Agregamos esta línea para obtener el teléfono
 				FROM producto p 
 				INNER JOIN categoria c
 				ON p.categoriaid = c.idcategoria
+				INNER JOIN persona per ON p.personaid = per.idpersona -- Agregamos esta línea para unir la tabla persona
 				WHERE p.status != 0 AND p.idproducto = '{$this->intIdProducto}' AND p.ruta = '{$this->strRuta}' ";
 		$request = $this->con->select($sql);
 		if (!empty($request)) {

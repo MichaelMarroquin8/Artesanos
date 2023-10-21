@@ -1,16 +1,18 @@
 <?php 
+session_start(); 
 	require_once("Models/TCategoria.php");
 	require_once("Models/TProducto.php");
 	require_once("Models/TCliente.php");
+	require_once("Models/TArtesanos.php");
 	require_once("Models/LoginModel.php");
 
 	class Tienda extends Controllers{
-		use TCategoria, TProducto, TCliente;
+		use TCategoria, TProducto, TCliente, TArtesanos;
 		public $login;
 		public function __construct()
 		{
+			
 			parent::__construct();
-			session_start();
 			$this->login = new LoginModel();
 		}
 
@@ -30,6 +32,7 @@
 			$data['pagina'] = $pagina;
 			$data['total_paginas'] = $total_paginas;
 			$data['categorias'] = $this->getCategorias();
+			$data['artesanos'] = $this->getArtesanos(4);
 			$this->views->getView($this,"tienda",$data);
 		}
 

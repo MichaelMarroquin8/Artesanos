@@ -17,7 +17,7 @@
 			$data['page_title'] = NOMBRE_EMPESA;
 			$data['page_name'] = "tienda_virtual";
 			$data['page'] = $pageContent;
-			// $data['slider'] = $this->getCategoriasT(CAT_SLIDER);
+			$data['slider'] = $this->getCategoriasT(CAT_SLIDER);
 			$data['banner'] = $this->getCategoriasT(CAT_SLIDER);
 			$data['artesanos'] = $this->getArtesanosT();
 			$data['productos'] = $this->getProductosT();

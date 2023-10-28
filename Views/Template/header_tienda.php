@@ -68,6 +68,8 @@ $infoPreguntas = !empty(getInfoPage(PPREGUNTAS)) ? getInfoPage(PPREGUNTAS)['cont
 	<link rel="stylesheet" type="text/css" href="<?= media() ?>/tienda/css/util.css">
 	<link rel="stylesheet" type="text/css" href="<?= media() ?>/tienda/css/main.css">
 	<link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/style2.css">
 	<!--===============================================================================================-->
 </head>
 
@@ -141,37 +143,33 @@ $infoPreguntas = !empty(getInfoPage(PPREGUNTAS)) ? getInfoPage(PPREGUNTAS)['cont
 
 					<!-- Logo desktop -->
 					<a href="<?= base_url(); ?>" class="logo">
-						<img src="<?= media() ?>/tienda/images/logo.png" alt="Tienda Virtual">
+						<!-- <img src="<?= media() ?>/tienda/images/logo.png" alt="Tienda Virtual"> -->
 					</a>
 
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
-							<li class="active-menu">
-								<a href="<?= base_url(); ?>">Inicio</a>
-							</li>
+						<li>
+					<a href="<?= base_url(); ?>">Inicio</a>
+				</li>
+				<li>
+					<a href="<?= base_url(); ?>/tienda/informacionArtesano">Artesanos</a>
+				</li>
+				<li>
+					<a href="<?= base_url(); ?>/tienda">Productos</a>
+				</li>
 
-							<li>
-								<a href="<?= base_url(); ?>/tienda">Tienda</a>
-							</li>
+				<li>
+					<a href="<?= base_url(); ?>/carrito">Carrito</a>
+				</li>
 
-							<li>
-								<a href="<?= base_url(); ?>/carrito">Carrito</a>
-							</li>
+				<li>
+					<a href="<?= base_url(); ?>/nosotros">Nosotros</a>
+				</li>
 
-							<li>
-								<a href="<?= base_url(); ?>/nosotros">Nosotros</a>
-							</li>
-							<li>
-								<a href="<?= base_url(); ?>/artesanos">Artesanos</a>
-							</li>
-							<li>
-								<a href="<?= base_url(); ?>/sucursales">Sucursales</a>
-							</li>
-
-							<li>
-								<a href="<?= base_url(); ?>/contacto">Contacto</a>
-							</li>
+				<li>
+					<a href="<?= base_url(); ?>/contacto">Contacto</a>
+				</li>
 						</ul>
 					</div>
 
@@ -259,9 +257,11 @@ $infoPreguntas = !empty(getInfoPage(PPREGUNTAS)) ? getInfoPage(PPREGUNTAS)['cont
 				<li>
 					<a href="<?= base_url(); ?>">Inicio</a>
 				</li>
-
 				<li>
-					<a href="<?= base_url(); ?>/tienda">Tienda</a>
+					<a href="<?= base_url(); ?>/tienda/informacionArtesano">Artesanos</a>
+				</li>
+				<li>
+					<a href="<?= base_url(); ?>/tienda">Productos</a>
 				</li>
 
 				<li>
@@ -270,12 +270,6 @@ $infoPreguntas = !empty(getInfoPage(PPREGUNTAS)) ? getInfoPage(PPREGUNTAS)['cont
 
 				<li>
 					<a href="<?= base_url(); ?>/nosotros">Nosotros</a>
-				</li>
-				<li>
-					<a href="<?= base_url(); ?>/artesanos">Artesanos</a>
-				</li>
-				<li>
-					<a href="<?= base_url(); ?>/sucursales">Sucursales</a>
 				</li>
 
 				<li>

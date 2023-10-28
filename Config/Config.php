@@ -21,7 +21,7 @@
 
 	//Simbolo de moneda
 	const SMONEY = "$";
-	const CURRENCY = "USD";
+	const CURRENCY = "COP";
 
 	//Api PayPal
 	//SANDBOX PAYPAL
@@ -36,7 +36,7 @@
 	//Datos envio de correo
 	const NOMBRE_REMITENTE = "Tienda Virtual";
 	const EMAIL_REMITENTE = "SENA";
-	const NOMBRE_EMPESA = "Tienda Artesanos Virtual";
+	const NOMBRE_EMPESA = "";
 	const WEB_EMPRESA = "";
 
 	const DESCRIPCION = "La mejor plataforma para las comunidades artesanas.";

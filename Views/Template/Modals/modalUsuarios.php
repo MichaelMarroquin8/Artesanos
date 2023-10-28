@@ -39,6 +39,7 @@
               <input type="email" class="form-control valid validEmail" id="txtEmail" name="txtEmail" required="">
             </div>
           </div>
+          
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="listRolid">Tipo usuario</label>
@@ -54,10 +55,15 @@
             </div>
           </div>
           <div class="form-row">
+          <div class="form-group col-md-12">
+              <label for="txtPassword">descripcion</label>
+              <input type="password" class="form-control" id="txtPassword" name="txtPassword">
+            </div>
             <div class="form-group col-md-6">
               <label for="txtPassword">Password</label>
               <input type="password" class="form-control" id="txtPassword" name="txtPassword">
             </div>
+           
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
@@ -65,6 +71,7 @@
               <input type="password" class="form-control" id="txtPassword" name="txtPassword">
             </div>
           </div>
+          
           <div class="form-row">
             <div class="form-group col-md-6">
               <div class="photo">

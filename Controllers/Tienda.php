@@ -32,7 +32,7 @@ session_start();
 			$data['pagina'] = $pagina;
 			$data['total_paginas'] = $total_paginas;
 			$data['categorias'] = $this->getCategorias();
-			$data['artesanos'] = $this->getArtesanos(4);
+			$data['artesanos'] = $this->getArtesanos();
 			$this->views->getView($this,"tienda",$data);
 		}
 
@@ -87,6 +87,37 @@ session_start();
 			}
 		}
 
+		public function artesanos($params){
+			if(empty($params)){
+				header("Location:".base_url());
+			}else{
+				$arrParams = explode(",",$params);
+				$idartesanos = intval($arrParams[0]);
+				$ruta = strClean($arrParams[1]);
+				$infoartesanos = $this->getArtesano($idartesanos,$ruta);
+				$prodartesanos = $this->getProdArtesano($idartesanos);
+				if(empty($infoartesanos)){
+					header("Location:".base_url());
+				}
+				$data['page_tag'] = "Artesano"." - ".$infoartesanos[0]['nombres'];
+				$data['page_title'] = $infoartesanos[0]['nombres'];
+				$data['page_name'] = "artesanos";
+				$data['artesanos'] = $infoartesanos;
+				$data['prodArtesanos'] = $this->getProdArtesano($idartesanos);
+				$this->views->getView($this,"artesanos",$data);
+			}
+		}
+
+		public function informacionArtesano()
+		{
+			$data['page_tag'] = "Artesanos";
+			$data['page_title'] = "Artesanos";
+			$data['page_name'] = "Artesanos";
+			$data['informacionArtesano'] = $this->getArtesanos();
+			$data['artesanos'] = $this->getArtesanosT();
+			$this->views->getView($this,"informacionArtesano",$data);
+		}
+
 		public function addCarrito(){
 			if($_POST){
 				//unset($_SESSION['arrCarrito']);exit;
@@ -101,7 +132,8 @@ session_start();
 											'producto' => $arrInfoProducto['nombre'],
 											'cantidad' => $cantidad,
 											'precio' => $arrInfoProducto['precio'],
-											'imagen' => $arrInfoProducto['images'][0]['url_image']
+											'imagen' => $arrInfoProducto['images'][0]['url_image'],
+											'telefono' => $arrInfoProducto['telefono']
 										);
 						if(isset($_SESSION['arrCarrito'])){
 							$on = true;

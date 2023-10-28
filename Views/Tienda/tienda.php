@@ -1,7 +1,7 @@
 <?php
 headerTienda($data);
 $arrProductos = $data['productos'];
-$arrArtesanos = $data['artesanos'];
+// $arrArtesanos = $data['artesanos'];
 ?>
 <br><br><br>
 <hr>
@@ -46,29 +46,7 @@ $arrArtesanos = $data['artesanos'];
 				</div>
 			</div>
 
-			<div class="dis-none panel-filter w-full p-t-10">
-				<div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
-					<div class="filter-col4 p-b-27">
-						<div class="mtext-102 cl2 p-b-15">
-							Artesanos
-						</div>
-
-						<div class="flex-w p-t-4 m-r--5">
-							<?php
-							if (count($data['artesanos']) > 0) {
-								foreach ($data['artesanos'] as $artesanos) {
-							?>
-									<a href="<?= base_url() ?>/tienda/artesano/<?= $artesanos['idpersona'] . '/' . $artesanos['nombres'] ?>" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-										<?= $artesanos['nombres'] ?>
-									</a>
-							<?php
-								}
-							}
-							?>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 
 		<div class="row isotope-grid">
@@ -86,7 +64,7 @@ $arrArtesanos = $data['artesanos'];
 						<!-- Block2 -->
 						<div class="block2">
 							<div class="block2-pic hov-img0">
-								<img src="<?= $portada ?>" alt="<?= $arrProductos[$p]['nombre'] ?>">
+								<img src="<?= $portada ?>" alt="<?= $arrProductos[$p]['nombre'] ?>" style=" height: 280px;">
 								<a href="<?= base_url() . '/tienda/producto/' . $arrProductos[$p]['idproducto'] . '/' . $ruta; ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 									Ver producto
 								</a>

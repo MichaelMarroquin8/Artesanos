@@ -1,6 +1,6 @@
 <?php
 headerTienda($data);
-// $arrSlider = $data['slider'];
+$arrSlider = $data['slider'];
 $arrBanner = $data['banner'];
 $arrProductos = $data['productos'];
 $arrArtesanos = $data['artesanos'];
@@ -9,57 +9,51 @@ $contentPage = "";
 if (!empty($data['page'])) {
 	$contentPage = $data['page']['contenido'];
 }
-
 ?>
-<!-- Artesanos -->
-<div class="sec-banner bg0 p-t-80 p-b-50">
-	<div class="container">
-		<div class="p-b-10">
-			<h3 class="ltext-103 cl5">
-				Artesanos
-			</h3>
-		</div>
-		<div class="row">
+<!-- Slider -->
+<section class="section-slide">
+	<div class="wrap-slick1">
+		<div class="slick1">
 			<?php
-			for ($j = 0; $j < count($arrArtesanos); $j++) {
-				$ruta = $arrArtesanos[$j]['ruta'];
-			?>
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="<?= media() . '/images/uploads/' . $arrArtesanos[$j]['portada'] ?>" alt="<?= $arrArtesanos[$j]['nombres'] ?>">
 
-						<a href="<?= base_url() . '/tienda/artesanos/' . $arrArtesanos[$j]['idpersona'] . '/' . $ruta; ?>" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									<?= $arrArtesanos[$j]['nombres'] ?>
-								</span>
-								<span class="block1-info stext-102 trans-04">
-									Artesano
-								</span>
-							</div>
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Ver productos
-								</div>
-							</div>
-						</a>
+			?>
+			<div class="item-slick1" style="background-image: url(<?= media() . '/images/uploads/' . "artesanos2.jpg" ?>);">
+				<div class="container h-full">
+					<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
+						<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
+							<span class="ltext-101 cl2 respon2">
+								Nos complace presentarte <br>los productos elaborados<br> por las comunidades<br> artesanales colombianas
+							</span>
+						</div>
+
+						<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
+							<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
+								Artesanos
+							</h2>
+						</div>
+
+						<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
+							<a href="<?= base_url() ?>/tienda/informacionArtesano" class=" flex-c-m stext-101 cl-black size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+								Ver productos
+							</a>
+						</div>
 					</div>
 				</div>
+			</div>
 			<?php
-			}
+
 			?>
 		</div>
 	</div>
-</div>
+</section>
 <!-- Categorias -->
 <div class="sec-banner bg0 p-t-80 p-b-50">
 	<div class="container">
-		<div class="p-b-10">
-			<h3 class="ltext-103 cl5">
-				Categorías
-			</h3>
-		</div>
+		<div class="site-branding flex flex-column align-items-center">
+			<h1 class="site-title"><a href="index.html" rel="home">Categorías</a></h1>
+			<p class="site-description">Principales categorías.</p>
+		</div><!-- .site-branding -->
+
 		<div class="row">
 			<?php
 			for ($j = 0; $j < count($arrBanner); $j++) {
@@ -76,7 +70,7 @@ if (!empty($data['page'])) {
 									<?= $arrBanner[$j]['nombre'] ?>
 								</span>
 								<span class="block1-info stext-102 trans-04">
-								Categoria
+									Categoria
 								</span>
 							</div>
 							<div class="block1-txt-child2 p-b-4 trans-05">
@@ -116,7 +110,7 @@ if (!empty($data['page'])) {
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="<?= $portada ?>" alt="<?= $arrProductos[$p]['nombre'] ?>">
+							<img src="<?= $portada ?>" alt="<?= $arrProductos[$p]['nombre'] ?>" style=" height: 250px;">
 							<a href="<?= base_url() . '/tienda/producto/' . $arrProductos[$p]['idproducto'] . '/' . $rutaProducto; ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 								Ver producto
 							</a>
@@ -149,6 +143,48 @@ if (!empty($data['page'])) {
 		<div class="flex-c-m flex-w w-full p-t-45">
 			<a href="<?= base_url() ?>/tienda" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
 				Ver más
+			</a>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="site-branding flex flex-column align-items-center">
+			<h1 class="site-title"><a href="index.html" rel="home">Artesanos</a></h1>
+			<p class="site-description">Nuestros últimos artesanos.</p>
+		</div><!-- .site-branding -->
+		<hr>
+		<div class="row isotope-grid">
+			<?php
+			for ($j = 0; $j < count($arrArtesanos); $j++) {
+				$ruta = $arrArtesanos[$j]['ruta'];
+			?>
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="<?= media() . '/images/uploads/' . $arrArtesanos[$j]['portada'] ?>" alt="<?= $arrArtesanos[$j]['nombres'] ?>" style=" height: 220px;">
+							<a href="<?= base_url() . '/tienda/artesanos/' . $arrArtesanos[$j]['idpersona'] . '/' . $ruta; ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+								Ver artesano
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="<?= base_url() . '/tienda/artesanos/' . $arrArtesanos[$j]['idpersona'] . '/' . $ruta; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<?= $arrArtesanos[$j]['nombres'] ?>
+								</a>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			<?php } ?>
+		</div>
+		<!-- Load more -->
+		<div class="flex-c-m flex-w w-full p-t-45">
+			<a href="<?= base_url() ?>/tienda/informacionArtesano" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
+				Ver todos los artesanos
 			</a>
 		</div>
 	</div>

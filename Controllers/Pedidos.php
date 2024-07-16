@@ -29,7 +29,7 @@ class Pedidos extends Controllers{
 	public function getPedidos(){
 		if($_SESSION['permisosMod']['r']){
 			$idpersona = "";
-			if( $_SESSION['userData']['idrol'] == RCLIENTES ){
+			if( $_SESSION['userData']['idrol'] == RARTESANO ){
 				$idpersona = $_SESSION['userData']['idpersona'];
 			}
 			$arrData = $this->model->selectPedidos($idpersona);
@@ -55,8 +55,6 @@ class Pedidos extends Controllers{
 
 					if($arrData[$i]['idtipopago'] == 1){
 						$btnView .= '<a title="Ver Transacción" href="'.base_url().'/pedidos/transaccion/'.$arrData[$i]['idtransaccionpaypal'].'" target="_blanck" class="btn btn-info btn-sm"> <i class="fa fa-paypal" aria-hidden="true"></i> </a> ';
-					}else{
-						$btnView .= '<button class="btn btn-secondary btn-sm" disabled=""><i class="fa fa-paypal" aria-hidden="true"></i></button> ';
 					}
 				}
 				if($_SESSION['permisosMod']['u']){
@@ -145,7 +143,7 @@ class Pedidos extends Controllers{
 	}
 
 	public function getPedido(string $pedido){
-		if($_SESSION['permisosMod']['u'] and $_SESSION['userData']['idrol'] != RCLIENTES){
+		if($_SESSION['permisosMod']['u'] ){
 			if($pedido == ""){
 				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
 			}else{

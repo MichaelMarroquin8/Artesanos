@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Abel OSH">
+    <meta name="author" content="Artesanos SENA">
     <meta name="theme-color" content="#009688">
-    <link rel="shortcut icon" href="<?= media();?>/images/favicon.ico">
+    <link rel="shortcut icon" href="<?= media();?>/images/faviconn.png">
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="<?= media();?>/css/main.css">
     <link rel="stylesheet" type="text/css" href="<?= media();?>/css/style.css">
@@ -31,12 +31,12 @@
           <input type="hidden" id="idUsuario" name="idUsuario" value="<?= $data['idpersona']; ?>" required >
           <input type="hidden" id="txtEmail" name="txtEmail" value="<?= $data['email']; ?>" required >
           <input type="hidden" id="txtToken" name="txtToken" value="<?= $data['token']; ?>" required >
-          <h3 class="login-head"><i class="fas fa-key"></i> Cambiar contraseÃ±a</h3>
+          <h3 class="login-head"><i class="fas fa-key"></i> Cambiar contrase«Ða</h3>
           <div class="form-group">
-            <input id="txtPassword" name="txtPassword" class="form-control" type="password" placeholder="Nueva contraseÃ±a" required >
+            <input id="txtPassword" name="txtPassword" class="form-control" type="password" placeholder="Nueva contrase«Ða" required >
           </div>
           <div class="form-group">
-            <input id="txtPasswordConfirm" name="txtPasswordConfirm" class="form-control" type="password" placeholder="Confirmar contraseÃ±a" required >
+            <input id="txtPasswordConfirm" name="txtPasswordConfirm" class="form-control" type="password" placeholder="Confirmar contrase«Ða" required >
           </div>
           <div class="form-group btn-container">
             <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-unlock fa-lg fa-fw"></i>REINICIAR</button>

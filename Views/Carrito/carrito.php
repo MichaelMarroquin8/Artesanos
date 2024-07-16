@@ -1,27 +1,27 @@
-<?php 
+<?php
 headerTienda($data);
 ?>
- <br><br><br>
+<br><br><br>
 <hr>
-	<!-- breadcrumb -->
-	<div class="container">
-		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-			<a href="<?= base_url() ?>" class="stext-109 cl8 hov-cl1 trans-04">
-				Inicio
-				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
-			</a>
-			<span class="stext-109 cl4">
-				<?= $data['page_title'] ?>
-			</span>
-		</div>
+<!-- breadcrumb -->
+<div class="container">
+	<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+		<a href="<?= base_url() ?>" class="stext-109 cl8 hov-cl1 trans-04">
+			Inicio
+			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+		</a>
+		<span class="stext-109 cl4">
+			<?= $data['page_title'] ?>
+		</span>
 	</div>
-<?php 
+</div>
+<?php
 $subtotal = 0;
 $total = 0;
-if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){ 
- ?>		
+if (isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0) {
+?>
 	<!-- Shoping Cart -->
-	<form class="bg0 p-t-75 p-b-85" >
+	<form class="bg0 p-t-75 p-b-85">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
@@ -34,40 +34,42 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 									<th class="column-3">Precio</th>
 									<th class="column-4">Cantidad</th>
 									<th class="column-5">Total</th>
+									<th class="column-5">Contacto</th>
 								</tr>
-							<?php 
+								<?php
 								foreach ($_SESSION['arrCarrito'] as $producto) {
 									$totalProducto = $producto['precio'] * $producto['cantidad'];
 									$subtotal += $totalProducto;
-									$idProducto = openssl_encrypt($producto['idproducto'],METHODENCRIPT,KEY);
-								
-							 ?>
-								<tr class="table_row <?= $idProducto ?>">
-									<td class="column-1">
-										<div class="how-itemcart1" idpr="<?= $idProducto ?>" op="2" onclick="fntdelItem(this)" >
-											<img src="<?= $producto['imagen'] ?>" alt="<?= $producto['producto'] ?>">
-										</div>
-									</td>
-									<td class="column-2"><?= $producto['producto'] ?></td>
-									<td class="column-3"><?= SMONEY.formatMoney($producto['precio']) ?></td>
-									<td class="column-4">
-										<div class="wrap-num-product flex-w m-l-auto m-r-0">
-											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m"
-											idpr="<?= $idProducto ?>">
-												<i class="fs-16 zmdi zmdi-minus"></i>
-											</div>
+									$idProducto = openssl_encrypt($producto['idproducto'], METHODENCRIPT, KEY);
 
-											<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="<?= $producto['cantidad'] ?>" idpr="<?= $idProducto ?>">
-
-											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m"
-											idpr="<?= $idProducto ?>">
-												<i class="fs-16 zmdi zmdi-plus"></i>
+								?>
+									<tr class="table_row <?= $idProducto ?>">
+										<td class="column-1">
+											<div class="how-itemcart1" idpr="<?= $idProducto ?>" op="2" onclick="fntdelItem(this)">
+												<img src="<?= $producto['imagen'] ?>" alt="<?= $producto['producto'] ?>">
 											</div>
-										</div>
-									</td>
-									<td class="column-5"><?= SMONEY.formatMoney($totalProducto) ?></td>
-								</tr>
-							<?php } ?>
+										</td>
+										<td class="column-2"><?= $producto['producto'] ?></td>
+										<td class="column-3"><?= SMONEY . formatMoney($producto['precio']) ?></td>
+										<td class="column-4">
+											<div class="wrap-num-product flex-w m-l-auto m-r-0">
+												<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m" idpr="<?= $idProducto ?>">
+													<i class="fs-16 zmdi zmdi-minus"></i>
+												</div>
+
+												<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="<?= $producto['cantidad'] ?>" idpr="<?= $idProducto ?>">
+
+												<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m" idpr="<?= $idProducto ?>">
+													<i class="fs-16 zmdi zmdi-plus"></i>
+												</div>
+											</div>
+										</td>
+										<td class="column-5"><?= SMONEY . formatMoney($totalProducto) ?></td>
+										<td class="column-5"><a href="https://api.whatsapp.com/send?phone=<?= "57" . $producto['telefono'] ?>" target="_blank" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="WhatsApp">
+												<i class="fab fa-whatsapp" aria-hidden="true">Contactar artesano</i>
+											</a></td>
+									</tr>
+								<?php } ?>
 
 							</table>
 						</div>
@@ -102,7 +104,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 
 							<div class="size-209">
 								<span id="subTotalCompra" class="mtext-110 cl2">
-									<?= SMONEY.formatMoney($subtotal) ?>
+									<?= SMONEY . formatMoney($subtotal) ?>
 								</span>
 							</div>
 
@@ -114,7 +116,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 
 							<div class="size-209">
 								<span class="mtext-110 cl2">
-									<?= SMONEY.formatMoney(COSTOENVIO) ?>
+									<?= SMONEY . formatMoney(COSTOENVIO) ?>
 								</span>
 							</div>
 						</div>
@@ -127,7 +129,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 
 							<div class="size-209 p-t-1">
 								<span id="totalCompra" class="mtext-110 cl2">
-									<?= SMONEY.formatMoney($subtotal + COSTOENVIO) ?>
+									<?= SMONEY . formatMoney($subtotal + COSTOENVIO) ?>
 								</span>
 							</div>
 						</div>
@@ -139,14 +141,13 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 			</div>
 		</div>
 	</form>
-<?php }else{ ?>
-<br>
-<div class="container">
-	<p>No hay producto en el carrito <a href="<?= base_url() ?>/tienda"> Ver productos</a></p>
-</div>
-<br>
-<?php 
-	}
-	footerTienda($data);
- ?>
-	
+<?php } else { ?>
+	<br>
+	<div class="container">
+		<p>No hay producto en el carrito <a href="<?= base_url() ?>/tienda"> Ver productos</a></p>
+	</div>
+	<br>
+<?php
+}
+footerTienda($data);
+?>

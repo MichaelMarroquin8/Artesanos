@@ -61,8 +61,8 @@
         if(ENVIRONMENT == 1){
             $asunto = $data['asunto'];
             $emailDestino = $data['email'];
-            $empresa = NOMBRE_REMITENTE;
-            $remitente = EMAIL_REMITENTE;
+            $empresa = 'Artesanos';
+            $remitente = 'Artesanos';
             $emailCopia = !empty($data['emailCopia']) ? $data['emailCopia'] : "";
             //ENVIO DE CORREO
             $de = "MIME-Version: 1.0\r\n";
@@ -83,17 +83,17 @@
 
             try {
                 //Server settings
-                $mail->SMTPDebug = 0;                      //Enable verbose debug output
+                $mail->SMTPDebug = 3;                      //Enable verbose debug output
                 $mail->isSMTP();                                            //Send using SMTP
-                $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+                $mail->Host       = 'localhost';                     //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = 'toolsfordeveloper@gmail.com';          //SMTP username
-                $mail->Password   = '@dmin08a';                               //SMTP password
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+                $mail->Username   = 'cgts2018@senacgts.org';          //SMTP username
+                $mail->Password   = 'cgts2018';                               //SMTP password
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
                 $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                 //Recipients
-                $mail->setFrom('toolsfordeveloper@gmail.com', 'Servidor Local');
+                $mail->setFrom('cgts2018@senacgts.org', 'Servidor Local');
                 $mail->addAddress($data['email']);     //Add a recipient
                 if(!empty($data['emailCopia'])){
                     $mail->addBCC($data['emailCopia']);
@@ -121,17 +121,17 @@
 
         try {
             //Server settings
-            $mail->SMTPDebug = 1;                      //Enable verbose debug output
+            $mail->SMTPDebug = 3;                      //Enable verbose debug output
             $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+            $mail->Host       = 'localhost';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'toolsfordeveloper@gmail.com';                     //SMTP username
-            $mail->Password   = '';                               //SMTP password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+            $mail->Username   = 'cgts2018@senacgts.org';          //SMTP username
+            $mail->Password   = 'cgts2018';                               //SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
+            
             //Recipients
-            $mail->setFrom('toolsfordeveloper@gmail.com', 'Servidor Local');
+            $mail->setFrom('cgts2018@senacgts.org', 'Servidor Local');
             $mail->addAddress($data['email']);     //Add a recipient
             if(!empty($data['emailCopia'])){
                 $mail->addBCC($data['emailCopia']);

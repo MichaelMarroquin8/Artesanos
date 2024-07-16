@@ -1,5 +1,5 @@
 <?php 
-	const BASE_URL = "http://localhost/tienda_virtual";
+	const BASE_URL = "http://localhost/Artesanos";
 	//const BASE_URL = "https://abelosh.com/tiendavirtual";
 
 	//Zona horaria
@@ -17,11 +17,11 @@
 
 	//Deliminadores decimal y millar Ej. 24,1989.00
 	const SPD = ".";
-	const SPM = ",";
+	const SPM = ".";
 
 	//Simbolo de moneda
 	const SMONEY = "$";
-	const CURRENCY = "USD";
+	const CURRENCY = "COP";
 
 	//Api PayPal
 	//SANDBOX PAYPAL
@@ -36,7 +36,7 @@
 	//Datos envio de correo
 	const NOMBRE_REMITENTE = "Tienda Virtual";
 	const EMAIL_REMITENTE = "SENA";
-	const NOMBRE_EMPESA = "Tienda Artesanos Virtual";
+	const NOMBRE_EMPESA = "";
 	const WEB_EMPRESA = "";
 
 	const DESCRIPCION = "La mejor plataforma para las comunidades artesanas.";
@@ -86,8 +86,8 @@
 
 	//Roles
 	const RADMINISTRADOR = 1;
-	const RSUPERVISOR = 2;
-	const RCLIENTES = 3;
+	const RARTESANO = 4;
+	const RCLIENTES = 4;
 
 	const STATUS = array('Completo','Aprobado','Cancelado','Reembolsado','Pendiente','Entregado');
 

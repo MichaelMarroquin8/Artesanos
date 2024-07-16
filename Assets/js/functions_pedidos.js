@@ -161,7 +161,6 @@ function fntEditInfo(element,idpedido){
             }
             divLoading.style.display = "none";
             return false;
-
         }
     }
 }

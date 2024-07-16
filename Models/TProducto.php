@@ -11,6 +11,7 @@ trait TProducto
 	private $option;
 	private $strRuta;
 	private $strRutaCategoria;
+
 	public function getProductosT()
 	{
 		$this->con = new Mysql();
@@ -238,10 +239,11 @@ trait TProducto
 						c.nombre as categoria,
 						p.precio,
 						p.ruta,
-						p.stock
+						p.stock,
+						per.telefono
 				FROM producto p 
-				INNER JOIN categoria c
-				ON p.categoriaid = c.idcategoria
+				INNER JOIN categoria c ON p.categoriaid = c.idcategoria
+				INNER JOIN persona per ON p.personaid = per.idpersona
 				WHERE p.status != 0 AND p.idproducto = '{$this->intIdProducto}' ";
 		$request = $this->con->select($sql);
 		if (!empty($request)) {
@@ -261,7 +263,7 @@ trait TProducto
 		}
 		return $request;
 	}
-
+	
 	public function cantProductos($categoria = null)
 	{
 		$where = "";

@@ -14,7 +14,7 @@
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
           <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
               <label for="txtIdentificacion">Identificación</label>
               <input type="text" class="form-control" id="txtIdentificacion" name="txtIdentificacion" required="">
             </div>
@@ -22,7 +22,7 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="txtNombre">Nombres</label>
-              <input type="text" class="form-control valid validText" id="txtNombre" name="txtNombre" required="">
+              <input type="text"  class="form-control" id="txtNombre" name="txtNombre" required="">
             </div>
             <div class="form-group col-md-6">
               <label for="txtApellido">Apellidos</label>
@@ -39,6 +39,7 @@
               <input type="email" class="form-control valid validEmail" id="txtEmail" name="txtEmail" required="">
             </div>
           </div>
+
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="listRolid">Tipo usuario</label>
@@ -58,15 +59,17 @@
               <label for="txtPassword">Password</label>
               <input type="password" class="form-control" id="txtPassword" name="txtPassword">
             </div>
-          </div>
-          <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="txtPassword">Password</label>
-              <input type="password" class="form-control" id="txtPassword" name="txtPassword">
+              <label for="txtPasswordConfirm">Password</label>
+              <input type="password" class="form-control" id="txtPasswordConfirm" name="txtPasswordConfirm">
             </div>
           </div>
+          <div class="form-group">
+            <label class="control-label">Descripción Artesano</label>
+            <textarea class="form-control" id="txtDescription" name="txtDescription"></textarea>
+          </div>
           <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
               <div class="photo">
                 <label for="foto">Foto (570x380)</label>
                 <div class="prevPhoto">

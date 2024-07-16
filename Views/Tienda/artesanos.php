@@ -8,7 +8,11 @@ $arrProductos = $data['prodArtesanos'];
 <!-- Product -->
 <!--  -->
 <div class="container">
+<<<<<<< HEAD
 	<div class="flex-w flex-sb-m p-b-5">
+=======
+	<div class="flex-w flex-sb-m p-b-52">
+>>>>>>> 7d9469809131d24a04212ebee14b4956fc42bc55
 		<div class="flex-w flex-l-m filter-tope-group m-tb-10">
 			<?php
 			if (count($data['artesanos']) > 0) {
@@ -24,7 +28,12 @@ $arrProductos = $data['prodArtesanos'];
 										</h3>
 
 										<p class="stext-113 cl6 p-b-26">
+<<<<<<< HEAD
 											<?= $artesanos['descripcion'] ?>
+=======
+											<!-- <?= $artesanos['nombres'] ?> -->
+											Breve descripción de cada artesano individualmente, como carta de presentación al publico.
+>>>>>>> 7d9469809131d24a04212ebee14b4956fc42bc55
 										</p>
 									</div>
 								</div>
@@ -50,9 +59,12 @@ $arrProductos = $data['prodArtesanos'];
 			?>
 		</div>
 	</div>
+<<<<<<< HEAD
 	<div class="bg6 flex-c-m flex-w size-302 m-t-0 p-tb-15">
 		<h3>Productos de este artesano</h3>
 	</div>
+=======
+>>>>>>> 7d9469809131d24a04212ebee14b4956fc42bc55
 </div>
 <!--  -->
 <!-- Related Products -->
@@ -61,7 +73,13 @@ $arrProductos = $data['prodArtesanos'];
 		<!-- Slide2 -->
 		<div class="wrap-slick2">
 			<div class="container">
+<<<<<<< HEAD
 
+=======
+				<div class="bg6 flex-c-m flex-w size-302 m-t-73 p-tb-15">
+					<h3>Productos de este artesano</h3>
+				</div>
+>>>>>>> 7d9469809131d24a04212ebee14b4956fc42bc55
 				<hr>
 				<div class="row isotope-grid">
 					<?php

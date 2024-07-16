@@ -22,7 +22,11 @@ if (!empty($data['page'])) {
 					<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 						<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
 							<span class="ltext-101 cl2 respon2">
+<<<<<<< HEAD
 								Descubre de las manos de nuestros <br>artesanos, un estilo de vida,<br>de tradiciones ancestrales<br>que integra espiritualidad, <br>sanación y cohesión social.
+=======
+								Nos complace presentarte <br>los productos elaborados<br> por las comunidades<br> artesanales colombianas
+>>>>>>> 7d9469809131d24a04212ebee14b4956fc42bc55
 							</span>
 						</div>
 
@@ -51,7 +55,10 @@ if (!empty($data['page'])) {
 	<div class="container">
 		<div class="site-branding flex flex-column align-items-center">
 			<h1 class="site-title"><a href="index.html" rel="home">Categorías</a></h1>
+<<<<<<< HEAD
 			<br />
+=======
+>>>>>>> 7d9469809131d24a04212ebee14b4956fc42bc55
 			<p class="site-description">Principales categorías.</p>
 		</div><!-- .site-branding -->
 
@@ -163,7 +170,11 @@ if (!empty($data['page'])) {
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
+<<<<<<< HEAD
 							<img src="<?= media() . '/images/uploads/' . $arrArtesanos[$j]['portada'] ?>" alt="<?= $arrArtesanos[$j]['nombres'] ?>" style=" height: 400px;">
+=======
+							<img src="<?= media() . '/images/uploads/' . $arrArtesanos[$j]['portada'] ?>" alt="<?= $arrArtesanos[$j]['nombres'] ?>" style=" height: 220px;">
+>>>>>>> 7d9469809131d24a04212ebee14b4956fc42bc55
 							<a href="<?= base_url() . '/tienda/artesanos/' . $arrArtesanos[$j]['idpersona'] . '/' . $ruta; ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 								Ver artesano
 							</a>

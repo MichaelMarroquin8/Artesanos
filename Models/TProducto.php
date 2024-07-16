@@ -263,7 +263,10 @@ trait TProducto
 		}
 		return $request;
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 7d9469809131d24a04212ebee14b4956fc42bc55
 	public function cantProductos($categoria = null)
 	{
 		$where = "";

@@ -39,7 +39,11 @@
               <input type="email" class="form-control valid validEmail" id="txtEmail" name="txtEmail" required="">
             </div>
           </div>
+<<<<<<< HEAD
 
+=======
+          
+>>>>>>> 7d9469809131d24a04212ebee14b4956fc42bc55
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="listRolid">Tipo usuario</label>
@@ -55,19 +59,33 @@
             </div>
           </div>
           <div class="form-row">
+          <div class="form-group col-md-12">
+              <label for="txtPassword">descripcion</label>
+              <input type="password" class="form-control" id="txtPassword" name="txtPassword">
+            </div>
             <div class="form-group col-md-6">
               <label for="txtPassword">Password</label>
               <input type="password" class="form-control" id="txtPassword" name="txtPassword">
             </div>
+<<<<<<< HEAD
+=======
+           
+          </div>
+          <div class="form-row">
+>>>>>>> 7d9469809131d24a04212ebee14b4956fc42bc55
             <div class="form-group col-md-6">
               <label for="txtPasswordConfirm">Password</label>
               <input type="password" class="form-control" id="txtPasswordConfirm" name="txtPasswordConfirm">
             </div>
           </div>
+<<<<<<< HEAD
           <div class="form-group">
             <label class="control-label">Descripción Artesano</label>
             <textarea class="form-control" id="txtDescription" name="txtDescription"></textarea>
           </div>
+=======
+          
+>>>>>>> 7d9469809131d24a04212ebee14b4956fc42bc55
           <div class="form-row">
             <div class="form-group col-md-12">
               <div class="photo">
